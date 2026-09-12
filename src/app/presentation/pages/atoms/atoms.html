@@ -26,3 +26,39 @@
         }
     </section>
 </dsb-container-atom>
+
+<dsb-container-atom title="Image" >
+    <section class="d-flex gap-3 flex-wrap" >
+        @for(image of images; track image){
+            <div style="width: 220px;">
+                <dsb-image-atom
+                    [src]="image.src"
+                    [alt]="image.alt"
+                    [aspectRatio]="image.aspectRatio"
+                    [objectFit]="image.objectFit">
+                </dsb-image-atom>
+                <small class="text-muted d-block mt-1">
+                    {{ image.aspectRatio }} · {{ image.objectFit }}
+                </small>
+            </div>
+        }
+    </section>
+</dsb-container-atom>
+
+<dsb-container-atom title="Dot Indicator" >
+    <section>
+        <p class="text-muted mb-3">
+            Dot activo: <strong>{{ activeDotIndex }}</strong>
+            &nbsp;— Haz clic en un punto para cambiar el estado activo.
+        </p>
+        <div class="d-flex gap-3 align-items-center">
+            @for(dot of dots; track dot){
+                <dsb-dot-indicator-atom
+                    [index]="dot.index"
+                    [active]="dot.active"
+                    (dotClick)="onDotClick($event)">
+                </dsb-dot-indicator-atom>
+            }
+        </div>
+    </section>
+</dsb-container-atom>

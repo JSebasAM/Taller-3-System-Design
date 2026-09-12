@@ -7,7 +7,10 @@ import {
   ButtonAtom,
   ButtonType,
   ContainerAtom,
+  DotIndicatorAtom,
   IconAtom,
+  ImageAtom,
+  ImageObjectFit,
 } from '@brejcha13320/design-system-bootstrap';
 
 @Component({
@@ -17,6 +20,8 @@ import {
     ButtonAtom,
     IconAtom,
     ContainerAtom,
+    ImageAtom,
+    DotIndicatorAtom,
     CommonModule,
   ],
 })
@@ -49,10 +54,51 @@ export class Atoms {
     { name: 'bell', size: 3 },
     { name: 'android', size: 4 },
     { name: 'ban', size: 5 },
-  ]
+  ];
 
-  onClick(idButton: string){
+  images: { src: string; alt: string; aspectRatio: string; objectFit: ImageObjectFit }[] = [
+    {
+      src: 'https://picsum.photos/seed/angular/400/300',
+      alt: 'Imagen de Angular',
+      aspectRatio: '4/3',
+      objectFit: 'cover',
+    },
+    {
+      src: 'https://picsum.photos/seed/design/400/300',
+      alt: 'Imagen de Diseño',
+      aspectRatio: '1/1',
+      objectFit: 'contain',
+    },
+    {
+      src: 'https://picsum.photos/seed/atomic/600/300',
+      alt: 'Imagen Atomic Design',
+      aspectRatio: '16/9',
+      objectFit: 'cover',
+    },
+    {
+      src: 'https://url-invalida.xyz/imagen-rota.png',
+      alt: 'Imagen con fallback',
+      aspectRatio: '4/3',
+      objectFit: 'fill',
+    },
+  ];
+
+  dots: { index: number; active: boolean }[] = [
+    { index: 0, active: false },
+    { index: 1, active: true },
+    { index: 2, active: false },
+    { index: 3, active: false },
+  ];
+
+  activeDotIndex: number = 1;
+
+  onClick(idButton: string): void {
     alert(`Click en el Boton ${idButton}`);
+  }
+
+  onDotClick(index: number): void {
+    this.activeDotIndex = index;
+    this.dots = this.dots.map(d => ({ ...d, active: d.index === index }));
   }
 
 }
