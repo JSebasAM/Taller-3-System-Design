@@ -11,6 +11,14 @@ export type Themes =
     | 'light'
     | 'dark';
 
+/**
+ * Modos de ajuste de imagen CSS para el ImageAtom.
+ *
+ * @remarks
+ * Corresponde a la propiedad CSS `object-fit`.
+ */
+export type ImageObjectFit = 'cover' | 'contain' | 'fill';
+
 /** Tipo de tema para badges */
 export type BadgeType = Themes;
 
