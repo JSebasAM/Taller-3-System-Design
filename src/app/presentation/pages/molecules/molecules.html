@@ -1,6 +1,6 @@
 <dsb-container-atom title="Button Group" >
-    <dsb-button-group-molecule 
-        [buttonsGroupData]="buttonsGroupData" 
+    <dsb-button-group-molecule
+        [buttonsGroupData]="buttonsGroupData"
         (clicker)="onClick($event)" >
     </dsb-button-group-molecule>
 </dsb-container-atom>
@@ -9,3 +9,54 @@
     <dsb-nav-link-molecule [navLinks]="navLinks">
     </dsb-nav-link-molecule>
 </dsb-container-atom>
+
+<dsb-container-atom title="App Card">
+  <div class="row g-4">
+    <div class="col-12 col-md-6 col-lg-4">
+      <dsb-app-card-molecule
+        title="Tarjeta Tecnológica"
+        text="Explora las bases del Atomic Design aplicadas a componentes reutilizables con Angular y Bootstrap."
+        image="https://picsum.photos/seed/tech/500/300"
+        badgeText="Tecnología"
+        badgeType="primary">
+      </dsb-app-card-molecule>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <dsb-app-card-molecule
+        title="Naturaleza y Paisajes"
+        text="Aprende cómo orquestar átomos de imagen y badges dentro de moléculas autocontenidas y reactivas."
+        image="https://picsum.photos/seed/nature/500/300"
+        badgeText="Naturaleza"
+        badgeType="success">
+      </dsb-app-card-molecule>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <dsb-app-card-molecule
+        title="Proyección de Imagen"
+        text="Esta tarjeta demuestra la recepción de ImageAtom mediante proyección de contenido directa."
+        badgeText="Avanzado"
+        badgeType="warning"
+        badgeTypeText="text-dark">
+        <dsb-image-atom
+          src="https://picsum.photos/seed/city/500/300"
+          alt="Ciudad"
+          aspectRatio="16/9">
+        </dsb-image-atom>
+      </dsb-app-card-molecule>
+    </div>
+  </div>
+</dsb-container-atom>
+
+<dsb-container-atom title="Carousel Control">
+  <div class="d-flex flex-column align-items-center gap-2 py-3">
+    <dsb-carousel-control-molecule
+      [total]="carouselTotal"
+      [current]="carouselIndex"
+      (slideChange)="onCarouselSlideChange($event)">
+    </dsb-carousel-control-molecule>
+    <small class="text-muted">Diapositiva activa: {{ carouselIndex + 1 }} de {{ carouselTotal }}</small>
+  </div>
+</dsb-container-atom>
+
