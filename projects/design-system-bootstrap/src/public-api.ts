@@ -16,6 +16,8 @@ export { DotIndicatorAtom } from './lib/presentation/atoms/dot-indicator/dot-ind
 //Molecules
 export { NavLinkMolecule } from './lib/presentation/molecules/nav-link/nav-link.molecule';
 export { ButtonGroupMolecule } from './lib/presentation/molecules/button-group/button-group.molecule';
+export { AppCardMolecule } from './lib/presentation/molecules/app-card/app-card.molecule';
+export { CarouselControlMolecule } from './lib/presentation/molecules/carousel-control/carousel-control.molecule';
 
 //Organisms
 export { NavbarOrganism } from './lib/presentation/organisms/navbar/navbar.organism';

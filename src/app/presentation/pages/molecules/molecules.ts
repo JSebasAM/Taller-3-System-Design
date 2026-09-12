@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
-import { 
-  ButtonGroupData, 
-  ButtonGroupMolecule, 
-  ContainerAtom, 
-  NavLink, 
-  NavLinkMolecule 
+import {
+  AppCardMolecule,
+  BadgeType,
+  ButtonGroupData,
+  ButtonGroupMolecule,
+  CarouselControlMolecule,
+  ContainerAtom,
+  ImageAtom,
+  NavLink,
+  NavLinkMolecule,
 } from '@brejcha13320/design-system-bootstrap';
 
 @Component({
@@ -13,6 +17,9 @@ import {
     ContainerAtom,
     ButtonGroupMolecule,
     NavLinkMolecule,
+    AppCardMolecule,
+    CarouselControlMolecule,
+    ImageAtom,
   ],
 })
 export class Molecules {
@@ -33,7 +40,16 @@ export class Molecules {
     { text: 'Link 3', url: '/organisms' },
   ];
 
+  carouselTotal: number = 5;
+  carouselIndex: number = 0;
+
+  onCarouselSlideChange(index: number): void {
+    this.carouselIndex = index;
+  }
+
   onClick(idButton: string){
     alert(`Click en el Boton de Grupo ${idButton}`);
   }
 }
+
+
