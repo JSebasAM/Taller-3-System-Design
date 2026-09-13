@@ -21,3 +21,4 @@ export { CarouselControlMolecule } from './lib/presentation/molecules/carousel-c
 
 //Organisms
 export { NavbarOrganism } from './lib/presentation/organisms/navbar/navbar.organism';
+export { CardCarouselOrganism } from './lib/presentation/organisms/carousel/card-carousel.organism';

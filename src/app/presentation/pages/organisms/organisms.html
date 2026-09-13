@@ -1,3 +1,10 @@
 <dsb-container-atom title="Navbar" >
     <dsb-navbar-organism [navbarConfig]="navbarConfig"></dsb-navbar-organism>
 </dsb-container-atom>
+
+<dsb-container-atom title="Card Carousel" >
+    <dsb-card-carousel-organism
+        [config]="carouselConfig"
+        (itemSelected)="onItemSelected($event)">
+    </dsb-card-carousel-organism>
+</dsb-container-atom>

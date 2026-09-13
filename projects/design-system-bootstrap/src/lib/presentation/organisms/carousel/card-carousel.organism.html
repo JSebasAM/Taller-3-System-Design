@@ -1,0 +1,34 @@
+@if (config && config.items.length > 0) {
+  <div class="dsb-card-carousel">
+
+    <!-- Track deslizante -->
+    <div
+      #carouselTrack
+      class="dsb-card-carousel__track">
+
+      @for (item of config.items; track item.id) {
+        <div
+          class="dsb-card-carousel__item"
+          [style.minWidth]="cardWidthPercent"
+          (click)="onCardClick(item.id)">
+          <dsb-app-card-molecule
+            [title]="item.title"
+            [text]="item.text"
+            [image]="item.image"
+            [badge]="item.badge">
+          </dsb-app-card-molecule>
+        </div>
+      }
+
+    </div>
+
+    <!-- Controles de navegación -->
+    <dsb-carousel-control-molecule
+      [total]="totalSlides"
+      [current]="currentIndex"
+      [loop]="config.loop ?? true"
+      (slideChange)="onSlideChange($event)">
+    </dsb-carousel-control-molecule>
+
+  </div>
+}
