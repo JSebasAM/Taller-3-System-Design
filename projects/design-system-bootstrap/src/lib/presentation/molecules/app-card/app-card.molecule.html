@@ -1,0 +1,37 @@
+<article class="card dsb-app-card h-100" role="article" [attr.aria-label]="title || 'Tarjeta'">
+  @if (currentImageSrc) {
+    <div class="dsb-app-card__image-container">
+      <dsb-image-atom
+        [src]="currentImageSrc"
+        [alt]="currentImageAlt"
+        [aspectRatio]="currentAspectRatio"
+        [objectFit]="currentObjectFit">
+      </dsb-image-atom>
+    </div>
+  } @else {
+    <ng-content select="dsb-image-atom"></ng-content>
+  }
+
+  <div class="card-body dsb-app-card__body">
+    @if (currentBadgeText) {
+      <div class="dsb-app-card__badge">
+        <dsb-badge-atom
+          [text]="currentBadgeText"
+          [type]="currentBadgeType"
+          [typeText]="currentBadgeTypeText">
+        </dsb-badge-atom>
+      </div>
+    }
+
+    @if (title) {
+      <h5 class="card-title dsb-app-card__title">{{ title }}</h5>
+    }
+
+    @if (text) {
+      <p class="card-text dsb-app-card__text">{{ text }}</p>
+    }
+
+    <ng-content></ng-content>
+  </div>
+</article>
+
