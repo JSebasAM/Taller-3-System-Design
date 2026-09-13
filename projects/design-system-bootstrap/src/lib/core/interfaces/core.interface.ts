@@ -122,21 +122,49 @@ export interface CarouselControlConfig {
   loop?: boolean;
 }
 
+/**
+ * Representa un ítem individual dentro de un carrusel de tarjetas.
+ */
 export interface CarouselCardItem {
+  /** Identificador único del ítem */
   id: string;
+
+  /** Título principal de la tarjeta */
   title: string;
+
+  /** Texto descriptivo de la tarjeta */
   text: string;
+
+  /** Imagen asociada a la tarjeta (URL como string o configuración detallada) */
   image: string | CardImageData;
+
+  /** Datos opcionales para mostrar un badge en la tarjeta */
   badge?: CardBadgeData;
 }
 
 /** Modo de desplazamiento del carrusel */
 export type CarouselScrollMode = 'page' | 'card';
 
+/**
+ * Configuración general para el organismo CardCarouselOrganism.
+ */
 export interface CardCarouselConfig {
+  /** Lista de ítems a renderizar en el carrusel */
   items: CarouselCardItem[];
+
+  /** Número de tarjetas visibles simultáneamente por vista (por defecto: 3) */
   itemsPerView?: number;
+
+  /** Indica si el carrusel vuelve al inicio al llegar al final (por defecto: true) */
   loop?: boolean;
+
+  /** Ancho máximo de cada card en valor CSS (ej: '380px', '20rem'). Por defecto '380px'. */
   maxCardWidth?: string;
+
+  /**
+   * Modo de desplazamiento y paginación.
+   * - `'page'` (defecto): salta de a `itemsPerView` cards. Los dots representan páginas.
+   * - `'card'`: salta de a 1 card. Los dots representan cada card individual.
+   */
   scrollMode?: CarouselScrollMode;
 }
