@@ -112,7 +112,7 @@ export class CardCarouselOrganism implements AfterViewInit, OnChanges {
    */
   get totalSlides(): number {
     const total = this.config?.items?.length ?? 0;
-    return this.isCardMode ? total : Math.ceil(total / this.itemsPerView);
+    return Math.ceil(total / this.itemsPerView) + 1;
   }
 
   /**
