@@ -6,10 +6,11 @@
       #carouselTrack
       class="dsb-card-carousel__track">
 
-      @for (item of config.items; track item.id) {
+      @for (item of config.items; track item.id; let i = $index) {
         <div
           class="dsb-card-carousel__item"
-          [style.minWidth]="cardWidthPercent"
+          [class.dsb-card-carousel__item--active]="isActiveCard(i)"
+          [style.width]="cardWidth"
           (click)="onCardClick(item.id)">
           <dsb-app-card-molecule
             [title]="item.title"

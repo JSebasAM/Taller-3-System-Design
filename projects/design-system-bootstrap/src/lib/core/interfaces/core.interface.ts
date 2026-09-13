@@ -121,3 +121,22 @@ export interface CarouselControlConfig {
   /** Determina si la navegación es cíclica (wrap-around) */
   loop?: boolean;
 }
+
+export interface CarouselCardItem {
+  id: string;
+  title: string;
+  text: string;
+  image: string | CardImageData;
+  badge?: CardBadgeData;
+}
+
+/** Modo de desplazamiento del carrusel */
+export type CarouselScrollMode = 'page' | 'card';
+
+export interface CardCarouselConfig {
+  items: CarouselCardItem[];
+  itemsPerView?: number;
+  loop?: boolean;
+  maxCardWidth?: string;
+  scrollMode?: CarouselScrollMode;
+}

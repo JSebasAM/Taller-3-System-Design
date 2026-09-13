@@ -1,6 +1,6 @@
 {
   "name": "@brejcha13320/design-system-bootstrap",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Uceva Software Arquitecture - Atomic Design for Angular",
   "peerDependencies": {
     "@angular/common": "20.3.14",
